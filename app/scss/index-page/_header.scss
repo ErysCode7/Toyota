@@ -1,0 +1,406 @@
+.header {
+    width: 100%;
+    height: 70px;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    position: relative;
+    z-index: 999999;
+
+
+    &__container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    &__logo {
+        
+        > img.header__img {
+            width: 100px;
+            height: 70px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__nav {
+        background: $bg-color-white;
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - 70px);
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: scale(1, 0);
+        transition: transform $transition-main ease;
+        transform-origin: top;
+        padding: 0 1.5rem;
+        margin: 0 auto;
+        
+
+        &.show {
+            transform: scale(1, 1);
+        }
+
+        ul.header__navlinks {
+            padding-top: 0.1rem;
+
+            li {
+                line-height: 70px;
+                font-weight: normal;
+                border-bottom: 1px $border-white solid;
+                height: 100%;
+                position: relative;
+                cursor: pointer;
+
+                &.header__explore-vehicle > .megamenu {
+                    position: absolute;
+                    background-color: #FFF;
+                    transform: translateX(200%);
+                    transition: transform $transition-main ease;
+                    width: 100%;
+                    height: calc(100vh - 70px);
+                    top: 0;
+                    z-index: 999;
+                    
+                 
+
+                    &.show {
+                        transform: translateX(0);
+                    }
+
+                    .megamenu__contents {
+                   
+
+                        .megamenu__cars-tab {
+                            
+                            ul {
+                                
+                                .megamenu__vehicle-text {
+                                    background: $bg-color-white;
+                                    position: sticky;
+                                    display: flex;
+                                    justify-content: center;
+                                    margin-bottom: 2rem;
+                                
+
+                                    h2 {
+                                        font-size: 2rem;
+                                    }
+                                    
+
+                                    > svg.fa-angle-left {
+                                        position: absolute;
+                                        height: 22px;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                        left: 0;
+                                        width: 30px;
+                                        cursor: pointer;
+                                        
+                                    }   
+                                }
+
+                                li {
+
+                                }
+                            }
+                        }
+                    }
+
+                    .megamenu__grid-car-items {
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        background: $bg-color-white;
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        transform: translateX(200%);
+                        transition: transform $transition-main ease;
+                        z-index: 9999;      
+                        text-align: center;
+
+                        &.show {
+                            transform: translateX(0);
+                        }
+
+                        .megamenu__cars, .megamenu__trucks, .megamenu__crossovers,
+                        .megamenu__electrified, .megamenu__upcoming {
+                            display: none;
+                        }
+
+                        .megamenu__cars.active, .megamenu__trucks.active, .megamenu.megamenu__crossovers.active,
+                        .megamenu.megamenu__electrified.active, .megamenu__upcoming.active {
+                            display: block;
+                            animation: slide 0.8s ease;
+                        }
+                        
+                        @keyframes slide {
+                            from {
+                                transform: translateX(-100%);
+                                transition: transform 0.8s ease;
+                            }
+                            to {
+                                transform: translateX(0);
+                            }
+                        }
+
+                        .megamenu__cars {
+
+                            .megamenu__vehicle-text {
+                                background: $bg-color-white;
+                                position: sticky;
+                                top: 0;
+                                display: flex;
+                                justify-content: center;
+                                margin-bottom: 2rem;
+                                z-index: 9999999;
+                            
+
+                                h2 {
+                                    font-size: 2rem;
+                                }
+                                
+
+                                > svg.fa-angle-left {
+                                    position: absolute;
+                                    height: 22px;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    left: 0;
+                                    width: 30px;
+                                    cursor: pointer;
+                                    
+                                }   
+                            }
+
+                            .mega__menu-car {
+                           
+                                margin: 3rem 0;
+                                position: relative;
+                                height: 100%;
+
+                                .img-container {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    flex-direction: column;
+                                    height: 100%;
+                                    width: 100%;
+                                    
+                                    
+                                    .car-class {
+                                        position: absolute;
+                                        top: 0.3rem;
+                                        left: 26%;
+                                        padding: 0;
+                                        margin: 0;
+                                        line-height: 1;
+                                    }
+                                        
+                                    
+
+                                    img {
+                                        
+                                        display: block;
+                                        width: 241px; 
+                                        height: 102px;
+                                        aspect-ratio: 241 / 102;        
+                                        object-fit: contain;
+                                        object-position: center;
+                                    }
+                                }
+
+                                .car-price {
+                                    width: 241px;
+                                    margin: 0 auto;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    padding: 0;
+                                    line-height: 2;
+
+                                    > p {
+                                        padding: 0;
+                                        margin: 0;
+                                    }
+                                
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+
+                svg.fa-angle-right {
+                    position: absolute;
+                    height: 12px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 2rem;
+                    width: 30px;
+                    cursor: pointer;
+                    fill: darkgray;
+                }
+
+                button {
+                    border: none;
+                    outline: none;
+                    padding: 0;
+                    margin: 0;
+                    background: none;
+                    font-size: 1rem;
+                    color: $bg-color-black;
+                    font-weight: normal;
+                    cursor: pointer;
+                }
+
+                a {
+                    font-size: 1rem;
+                    color: $bg-color-black;
+                    font-weight: 600;
+                }
+
+            }
+        }
+    }
+
+    //HAMBURGER MENU
+    &__hamburger {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 80px;
+        cursor: pointer;
+       
+                
+        > .header__span {
+            display: block;
+            height: 8px;
+            width: 50%;
+            background: #111;
+            border-radius: 9px;
+            transition: all .3s;
+            position: relative;
+            height: 4px;
+            width: 23px;
+            margin: 3px 0;
+        }
+
+
+        &.active span:nth-child(1) {
+            animation: ease .7s top forwards;
+        }
+          
+        &.not-active span:nth-child(1) {
+            animation: ease .7s top-2 forwards;
+        }
+          
+        &.active span:nth-child(2) {
+            animation: ease .7s scaled forwards;
+        }
+          
+        &.not-active span:nth-child(2) {
+            animation: ease .7s scaled-2 forwards;
+        }
+          
+        &.active span:nth-child(3) {
+            animation: ease .7s bottom forwards;
+        }
+          
+        &.not-active span:nth-child(3) {
+            animation: ease .7s bottom-2 forwards;
+        }
+
+        //animated hamburger menu to x
+        @keyframes top {
+            0% {
+                top: 0;
+                transform: rotate(0);
+            }
+            50% {
+                top: 7.1px;
+                transform: rotate(0);
+            }
+            100% {
+                top: 7.1px;
+                transform: rotate(45deg);
+            }
+        }
+          
+        @keyframes top-2 {
+            0% {
+              top: 7.1px;
+              transform: rotate(45deg);
+            }
+            50% {
+              top: 7.1px;
+              transform: rotate(0deg);
+            }
+            100% {
+              top: 0;
+              transform: rotate(0deg);
+            }
+        }
+          
+        @keyframes bottom {
+            0% {
+              bottom: 0;
+              transform: rotate(0);
+            }
+            50% {
+              bottom: 7.1px;
+              transform: rotate(0);
+            }
+            100% {
+              bottom: 7.1px;
+              transform: rotate(135deg);
+            }
+        }
+          
+        @keyframes bottom-2 {
+            0% {
+              bottom: 7.1px;
+              transform: rotate(135deg);
+            }
+            50% {
+              bottom: 7.1px;
+              transform: rotate(0);
+            }
+            100% {
+              bottom: 0;
+              transform: rotate(0);
+            }
+        }
+          
+        @keyframes scaled {
+            50% {
+              transform: scale(0);
+            }
+            100% {
+              transform: scale(0);
+            }
+        }
+          
+        @keyframes scaled-2 {
+            0% {
+              transform: scale(0);
+            }
+            50% {
+              transform: scale(0);
+            }
+            100% {
+              transform: scale(1);
+            }
+        }
+    }
+
+}

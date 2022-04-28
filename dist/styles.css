@@ -1,0 +1,626 @@
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  height: 100%;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a, a::after, a::before {
+  text-decoration: none;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* flexbox */
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-jc-c {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex-jc-sb {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-ai-c {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-fd-c {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  background: #fff;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+          box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  position: relative;
+  z-index: 999999;
+}
+
+.header__container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header__logo > img.header__img {
+  width: 100px;
+  height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.header__nav {
+  background: #FFFFFF;
+  position: fixed;
+  width: 100%;
+  height: calc(100vh - 70px);
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+.header__nav.show {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+.header__nav ul.header__navlinks {
+  padding-top: 0.1rem;
+}
+
+.header__nav ul.header__navlinks li {
+  line-height: 70px;
+  font-weight: normal;
+  border-bottom: 1px #e6e6e6 solid;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu {
+  position: absolute;
+  background-color: #FFF;
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  width: 100%;
+  height: calc(100vh - 70px);
+  top: 0;
+  z-index: 999;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu.show {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__contents .megamenu__cars-tab ul .megamenu__vehicle-text {
+  background: #FFFFFF;
+  position: -webkit-sticky;
+  position: sticky;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__contents .megamenu__cars-tab ul .megamenu__vehicle-text h2 {
+  font-size: 2rem;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__contents .megamenu__cars-tab ul .megamenu__vehicle-text > svg.fa-angle-left {
+  position: absolute;
+  height: 22px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  width: 30px;
+  cursor: pointer;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #FFFFFF;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+  z-index: 9999;
+  text-align: center;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items.show {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars, .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__trucks, .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__crossovers,
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__electrified, .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__upcoming {
+  display: none;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars.active, .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__trucks.active, .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu.megamenu__crossovers.active,
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu.megamenu__electrified.active, .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__upcoming.active {
+  display: block;
+  -webkit-animation: slide 0.8s ease;
+          animation: slide 0.8s ease;
+}
+
+@-webkit-keyframes slide {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.8s ease;
+    transition: -webkit-transform 0.8s ease;
+    transition: transform 0.8s ease;
+    transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slide {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.8s ease;
+    transition: -webkit-transform 0.8s ease;
+    transition: transform 0.8s ease;
+    transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .megamenu__vehicle-text {
+  background: #FFFFFF;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 2rem;
+  z-index: 9999999;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .megamenu__vehicle-text h2 {
+  font-size: 2rem;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .megamenu__vehicle-text > svg.fa-angle-left {
+  position: absolute;
+  height: 22px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0;
+  width: 30px;
+  cursor: pointer;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .mega__menu-car {
+  margin: 3rem 0;
+  position: relative;
+  height: 100%;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .mega__menu-car .img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .mega__menu-car .img-container .car-class {
+  position: absolute;
+  top: 0.3rem;
+  left: 26%;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .mega__menu-car .img-container img {
+  display: block;
+  width: 241px;
+  height: 102px;
+  aspect-ratio: 241 / 102;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .mega__menu-car .car-price {
+  width: 241px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0;
+  line-height: 2;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .mega__menu-car .car-price > p {
+  padding: 0;
+  margin: 0;
+}
+
+.header__nav ul.header__navlinks li svg.fa-angle-right {
+  position: absolute;
+  height: 12px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 2rem;
+  width: 30px;
+  cursor: pointer;
+  fill: darkgray;
+}
+
+.header__nav ul.header__navlinks li button {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  font-size: 1rem;
+  color: #000000;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.header__nav ul.header__navlinks li a {
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 600;
+}
+
+.header__hamburger {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 80px;
+  cursor: pointer;
+}
+
+.header__hamburger > .header__span {
+  display: block;
+  height: 8px;
+  width: 50%;
+  background: #111;
+  border-radius: 9px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  position: relative;
+  height: 4px;
+  width: 23px;
+  margin: 3px 0;
+}
+
+.header__hamburger.active span:nth-child(1) {
+  -webkit-animation: ease .7s top forwards;
+          animation: ease .7s top forwards;
+}
+
+.header__hamburger.not-active span:nth-child(1) {
+  -webkit-animation: ease .7s top-2 forwards;
+          animation: ease .7s top-2 forwards;
+}
+
+.header__hamburger.active span:nth-child(2) {
+  -webkit-animation: ease .7s scaled forwards;
+          animation: ease .7s scaled forwards;
+}
+
+.header__hamburger.not-active span:nth-child(2) {
+  -webkit-animation: ease .7s scaled-2 forwards;
+          animation: ease .7s scaled-2 forwards;
+}
+
+.header__hamburger.active span:nth-child(3) {
+  -webkit-animation: ease .7s bottom forwards;
+          animation: ease .7s bottom forwards;
+}
+
+.header__hamburger.not-active span:nth-child(3) {
+  -webkit-animation: ease .7s bottom-2 forwards;
+          animation: ease .7s bottom-2 forwards;
+}
+
+@-webkit-keyframes top {
+  0% {
+    top: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50% {
+    top: 7.1px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    top: 7.1px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+@keyframes top {
+  0% {
+    top: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50% {
+    top: 7.1px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    top: 7.1px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+@-webkit-keyframes top-2 {
+  0% {
+    top: 7.1px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  50% {
+    top: 7.1px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    top: 0;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes top-2 {
+  0% {
+    top: 7.1px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  50% {
+    top: 7.1px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    top: 0;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes bottom {
+  0% {
+    bottom: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50% {
+    bottom: 7.1px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    bottom: 7.1px;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+}
+
+@keyframes bottom {
+  0% {
+    bottom: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50% {
+    bottom: 7.1px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    bottom: 7.1px;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+}
+
+@-webkit-keyframes bottom-2 {
+  0% {
+    bottom: 7.1px;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  50% {
+    bottom: 7.1px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    bottom: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@keyframes bottom-2 {
+  0% {
+    bottom: 7.1px;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  50% {
+    bottom: 7.1px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    bottom: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@-webkit-keyframes scaled {
+  50% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes scaled {
+  50% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@-webkit-keyframes scaled-2 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaled-2 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=styles.css.map */

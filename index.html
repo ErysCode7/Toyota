@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyota</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:ital,wght@0,300;1,300&family=Oswald:wght@400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2610ba9d32.js"></script>
+    <link rel="stylesheet" href="./dist/styles.css">
+    <link rel="shortcut icon" href="./assets/images/index-page-images/toyota-logo.jpeg" type="image/x-icon">
+    <script src="./app/js/script.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__container flex flex-jc-sb flex-ai-c">
+            <div class="header__logo">
+                <img class="header__img "src="./assets/images/index-page-images/toyota-logo.jpeg" alt="Toyota Logo">
+            </div>
+            <nav class="header__nav" id="header__nav">
+                <ul class="header__navlinks">
+                    <li class="header__explore-vehicle" id="header__explore-vehicle">
+                        <button>Explore Vehicle</button>
+                        <svg class="fa-angle-right explore-vehicle-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+                        <div class="header__vehicles megamenu" id="header__vehicles">
+                            <div class="megamenu__contents">
+                                <div class="megamenu__cars-tab" id="mega__menu__cars-tab">
+                                    <ul>
+                                        <div class="megamenu__vehicle-text">
+                                            <svg class="fa-angle-left back-to-explore-vehicle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg>
+                                            <h2>VEHICLES</h2>
+                                        </div> 
+                                        <li class="cars-minivan-li" id="cars-minivan-li">
+                                            <button class="active">Cars & Minivan</button>
+                                            <svg class="fa-angle-right cars-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+                                        </li>
+                                        <li class="trucks-li" id="trucks-li">
+                                            <button>Trucks</button>
+                                            <svg class="fa-angle-right trucks-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+                                        </li>
+                                        <li class="crossover-li" id="crossover-li">
+                                            <button>Crossovers & SUVs</button>
+                                            <svg class="fa-angle-right crossover-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+                                        </li>
+                                        <li class="electrified-li" id="electrified-li">
+                                            <button>Electrified</button>
+                                            <svg class="fa-angle-right electrified-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+                                        </li>
+                                        <li class="upcoming-li" id="upcoming-li">
+                                            <button>Upcoming Vehicles</button>
+                                            <svg class="fa-angle-right upcoming-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="megamenu__grid-car-items carousel" id="megamenu__grid-car-items">
+                                    <div class="megamenu__cars active">
+                                        <div class="mega__menu-grid-car">
+                                            <div class="megamenu__vehicle-text">
+                                                <svg class="fa-angle-left back-to-vehicle-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"/></svg>
+                                                <h2>CARS & MINIVAN</h2>
+                                            </div> 
+                                            <div class="mega__menu-car">
+                                                <div class="img-container">
+                                                    <p class="car-class">Plug-in Hybrid</p>
+                                                    <img src="./assets/images/cars-&-minivan/2022-prius-prime.jpg" alt="2022 Prius Prime">
+                                                </div>
+                                                <div class="car-price">
+                                                    <h4>2022 Prius Prime</h4>
+                                                    <p><span>$28,220</span> starting*</p>
+                                                    <p><span>54/133</span> Est. MPG*/MPGe*</p>
+                                                </div>
+                                            </div>
+                                            <div class="mega__menu-car">
+                                                <div class="img-container">
+                                                    <p class="car-class">Hybrid</p>
+                                                    <img src="./assets/images/cars-&-minivan/2022-prius.jpg" alt="2022 Prius">
+                                                </div>
+                                                <div class="car-price">
+                                                    <h4>2022 Prius</h4>
+                                                    <p><span>$24,265</span> starting*</p>
+                                                    <p><span>58/53</span> Est. MPG*</p>
+                                                </div>
+                                            </div>
+                                            <div class="mega__menu-car">
+                                                <div class="img-container">
+                                                    <p class="car-class">Hybrid Available</p>
+                                                    <img src="./assets/images/cars-&-minivan/2022-corolla.jpg" alt="2022 Corolla">
+                                                </div>
+                                                <div class="car-price">
+                                                    <h4>2022 Corolla</h4>
+                                                    <p><span>$20,175</span> starting*</p>
+                                                    <p><span>31/40</span> Est. MPG*</p>
+                                                </div>
+                                            </div>
+                                            <div class="mega__menu-car">
+                                                <div class="img-container">
+                                                    <p class="car-class">Hybrid</p>
+                                                    <img src="./assets/images/cars-&-minivan/2022-corolla-hybrid.jpg" alt="2022 Corolla Hybrid">
+                                                </div>
+                                                <div class="car-price">
+                                                    <h4>2022 Corolla Hybrid</h4>
+                                                    <p><span>$23,750</span> starting*</p>
+                                                    <p><span>53/52</span> Est. MPG*</p>
+                                                </div>
+                                            </div>
+                                            <div class="mega__menu-car">
+                                                <div class="img-container">
+                                                    <img src="./assets/images/cars-&-minivan/2022-corolla-hatchback.jpg" alt="2022 Corolla Hatchback">
+                                                </div>
+                                                <div class="car-price">
+                                                    <h4>2022 Corolla Hatchback</h4>
+                                                    <p><span>$20,915</span> starting*</p>
+                                                    <p><span>32/41</span> Est. MPG*</p>
+                                                </div>
+                                            </div>
+                                            <div class="mega__menu-car">
+                                                <div class="img-container">
+                                                    <p class="car-class">AWD Available</p>
+                                                    <img src="./assets/images/cars-&-minivan/2022-camry.jpg" alt="2022 Camry">
+                                                </div>
+                                                <div class="car-price">
+                                                    <h4>2022 Camry</h4>
+                                                    <p><span>$25,395</span> starting*</p>
+                                                    <p><span>28/39</span> Est. MPG*</p>
+                                                </div>
+                                            </div>
+                                            <div class="mega__menu-car">
+                                                <div class="img-container">
+                                                    <p class="car-class">Hybrid</p>
+                                                    <img src="./assets/images/cars-&-minivan/2022-camry-hybrid.jpg" alt="2022 Camry Hybrid">
+                                                </div>
+                                                <div class="car-price">
+                                                    <h4>2022 Camry Hybrid</h4>
+                                                    <p><span>$27,480</span> starting*</p>
+                                                    <p><span>51/53</span> Est. MPG*</p>
+                                                </div>
+                                            </div>
+                                            <div class="mega__menu-car">
+                                                <div class="img-container">
+                                                    <p class="car-class">Hybrid Available</p>
+                                                    <img src="./assets/images/cars-&-minivan/2022-avalon.jpg" alt="2022 Avalon">
+                                                </div>
+                                                <div class="car-price">
+                                                    <h4>2022 Avalon</h4>
+                                                    <p><span>$36,375</span> starting*</p>
+                                                    <p><span>22/32</span> Est. MPG*</p>
+                                                </div>
+                                            </div>
+                                            <div class="mega__menu-car">
+                                                <div class="img-container">
+                                                    <p class="car-class">Hybrid</p>
+                                                    <img src="./assets/images/cars-&-minivan/2022-avalon-hybrid.jpg" alt="2022 Avalon Hybrid">
+                                                </div>
+                                                <div class="car-price">
+                                                    <h4>2022 Avalon Hybrid</h4>
+                                                    <p><span>$37,350</span> starting*</p>
+                                                    <p><span>43/44</span> Est. MPG*</p>
+                                                </div>
+                                            </div>
+                                            <div class="mega__menu-car">
+                                                <div class="img-container">
+                                                    <p class="car-class">Fuel Electric Vehicle</p>
+                                                    <img src="./assets/images/cars-&-minivan/2022-mirai.jpg" alt="2022 Prius">
+                                                </div>
+                                                <div class="car-price">
+                                                    <h4>2022 Mirai</h4>
+                                                    <p><span>$49,500</span> starting*</p>
+                                                    <p><span>76/71</span> Est. MPGe*</p>
+                                                </div>
+                                            </div>
+                                            <div class="mega__menu-car">
+                                                <div class="img-container">
+                                                    <img src="./assets/images/cars-&-minivan/2022-gr86.jpg" alt="2022 GR86">
+                                                </div>
+                                                <div class="car-price">
+                                                    <h4>2022 GR86</h4>
+                                                    <p><span>$27,700</span> starting*</p>
+                                                    <p><span>20/27</span> Est. MPG*</p>
+                                                </div>
+                                            </div>
+                                            <div class="mega__menu-car">
+                                                <div class="img-container">
+                                                    <img src="./assets/images/cars-&-minivan/2022-gr-supra.jpg" alt="2022 GR Supra">
+                                                </div>
+                                                <div class="car-price">
+                                                    <h4>2022 GR Supra</h4>
+                                                    <p><span>$43,290</span> starting*</p>
+                                                    <p><span>25/32</span> Est. MPG*</p>
+                                                </div>
+                                            </div>
+                                            <div class="mega__menu-car">
+                                                <div class="img-container">
+                                                    <p class="car-class">Hybrid</p>
+                                                    <img src="./assets/images/cars-&-minivan/2022-sienna.jpg" alt="2022 Sienna">
+                                                </div>
+                                                <div class="car-price">
+                                                    <h4>2022 Sienna</h4>
+                                                    <p><span>$34,710</span> starting*</p>
+                                                    <p><span>36/36</span> Est. MPG*</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#">Buying Guide</a></li>
+                    <li><a href="#">Care & Maintenance</a></li>
+                    <li>
+                        <button>Sign Up</button>
+                        <svg class="fa-angle-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+                    </li>
+                    <li>
+                        <button>Login</button>
+                        <svg class="fa-angle-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__hamburger not-active" id="header__hamburger">
+                <span class="header__span"></span>
+                <span class="header__span"></span>
+                <span class="header__span"></span>
+            </div>
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.<path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg> -->
+        </div>
+    </header>
+
+    <h1>hhello</h1>
+
+
+    <footer class="footer"></footer>
+</body>
+</html>
