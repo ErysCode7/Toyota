@@ -177,6 +177,24 @@ a, a::after, a::before {
   .header__nav ul.header__navlinks li {
     padding: 0 1rem;
     border: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.header__nav ul.header__navlinks li svg.fa-angle-arrow {
+  height: 12px;
+  margin-left: 0.5rem;
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .header__nav ul.header__navlinks li svg.fa-angle-arrow.active {
+    display: block;
   }
 }
 

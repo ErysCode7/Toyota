@@ -59,4 +59,8 @@ window.addEventListener("DOMContentLoaded", () => {
             gridCarItems.classList.remove("show");
         });
     });
+
+    const angleArrow = document.querySelectorAll(".fa-angle-arrow");
+
+    
 });

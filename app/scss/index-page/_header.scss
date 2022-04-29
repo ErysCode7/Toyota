@@ -40,7 +40,7 @@
         padding: 0 1.5rem;
         margin: 0 auto;
         margin-top: 0.2rem;
-        
+
         @include min-width(laptop) {
             background: none;
             transform: scale(1, 1);
@@ -79,7 +79,26 @@
                 @include min-width(laptop) {
                     padding: 0 1rem;
                     border: none;
+                    display: flex;
+                    align-items: center;
                 }
+
+                svg.fa-angle-arrow {
+                    height: 12px;
+                    margin-left: 0.5rem;
+                    display: none;
+                }
+
+                svg.fa-angle-arrow.active {
+                    @include min-width(laptop) {
+                        display: block;
+                    } 
+                }
+
+                
+
+
+                
 
                 &.header__explore-vehicle > .megamenu {
                     position: absolute;
