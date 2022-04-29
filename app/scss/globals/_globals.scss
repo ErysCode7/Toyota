@@ -32,6 +32,12 @@ a, a::after, a::before {
     margin: 0 auto;
 }
 
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr;
+}
+
 //flexbox
 /* flexbox */
 .flex {

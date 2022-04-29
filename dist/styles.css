@@ -33,6 +33,15 @@ a, a::after, a::before {
   margin: 0 auto;
 }
 
+.main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 70px 1fr;
+      grid-template-rows: 70px 1fr;
+}
+
 /* flexbox */
 .flex {
   display: -webkit-box;
@@ -67,12 +76,12 @@ a, a::after, a::before {
 
 .header {
   width: 100%;
-  height: 70px;
   background: #fff;
   -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
           box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   position: relative;
   z-index: 999999;
+  height: 70px;
 }
 
 .header__container {
@@ -80,13 +89,21 @@ a, a::after, a::before {
   margin: 0 auto;
 }
 
+@media (min-width: 992px) {
+  .header__container {
+    height: 70px;
+  }
+}
+
+.header__logo {
+  height: 100%;
+}
+
 .header__logo > img.header__img {
   width: 100px;
   height: 70px;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
 }
 
 .header__nav {
@@ -108,6 +125,21 @@ a, a::after, a::before {
           transform-origin: top;
   padding: 0 1.5rem;
   margin: 0 auto;
+  margin-top: 0.2rem;
+}
+
+@media (min-width: 992px) {
+  .header__nav {
+    background: none;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    position: static;
+    height: auto;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
 }
 
 .header__nav.show {
@@ -119,6 +151,19 @@ a, a::after, a::before {
   padding-top: 0.1rem;
 }
 
+@media (min-width: 992px) {
+  .header__nav ul.header__navlinks {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+  }
+}
+
 .header__nav ul.header__navlinks li {
   line-height: 70px;
   font-weight: normal;
@@ -126,6 +171,13 @@ a, a::after, a::before {
   height: 100%;
   position: relative;
   cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .header__nav ul.header__navlinks li {
+    padding: 0 1rem;
+    border: none;
+  }
 }
 
 .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu {
@@ -143,12 +195,19 @@ a, a::after, a::before {
   z-index: 999;
 }
 
+@media (min-width: 992px) {
+  .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu {
+    position: none;
+    display: none;
+  }
+}
+
 .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu.show {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
 
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__contents .megamenu__cars-tab ul .megamenu__vehicle-text {
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__contents .megamenu__vehicle-tabs ul .megamenu__vehicle-text {
   background: #FFFFFF;
   position: -webkit-sticky;
   position: sticky;
@@ -161,11 +220,11 @@ a, a::after, a::before {
   margin-bottom: 2rem;
 }
 
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__contents .megamenu__cars-tab ul .megamenu__vehicle-text h2 {
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__contents .megamenu__vehicle-tabs ul .megamenu__vehicle-text h2 {
   font-size: 2rem;
 }
 
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__contents .megamenu__cars-tab ul .megamenu__vehicle-text > svg.fa-angle-left {
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__contents .megamenu__vehicle-tabs ul .megamenu__vehicle-text > svg.fa-angle-left {
   position: absolute;
   height: 22px;
   top: 50%;
@@ -176,12 +235,19 @@ a, a::after, a::before {
   cursor: pointer;
 }
 
+@media (min-width: 992px) {
+  .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__contents .megamenu__vehicle-tabs ul .megamenu__vehicle-text > svg.fa-angle-left {
+    display: none;
+    position: none;
+  }
+}
+
 .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items {
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -211,21 +277,21 @@ a, a::after, a::before {
   display: none;
 }
 
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars.active, .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__trucks.active, .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu.megamenu__crossovers.active,
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu.megamenu__electrified.active, .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__upcoming.active {
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars.active, .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__trucks.active, .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__crossovers.active,
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__electrified.active, .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__upcoming.active {
   display: block;
-  -webkit-animation: slide 0.8s ease;
-          animation: slide 0.8s ease;
+  -webkit-animation: slide 300ms ease;
+          animation: slide 300ms ease;
 }
 
 @-webkit-keyframes slide {
   from {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-    -webkit-transition: -webkit-transform 0.8s ease;
-    transition: -webkit-transform 0.8s ease;
-    transition: transform 0.8s ease;
-    transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+    -webkit-transition: -webkit-transform 300ms ease;
+    transition: -webkit-transform 300ms ease;
+    transition: transform 300ms ease;
+    transition: transform 300ms ease, -webkit-transform 300ms ease;
   }
   to {
     -webkit-transform: translateX(0);
@@ -235,12 +301,12 @@ a, a::after, a::before {
 
 @keyframes slide {
   from {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-    -webkit-transition: -webkit-transform 0.8s ease;
-    transition: -webkit-transform 0.8s ease;
-    transition: transform 0.8s ease;
-    transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+    -webkit-transform: translateX(-200%);
+            transform: translateX(-200%);
+    -webkit-transition: -webkit-transform 300ms ease;
+    transition: -webkit-transform 300ms ease;
+    transition: transform 300ms ease;
+    transition: transform 300ms ease, -webkit-transform 300ms ease;
   }
   to {
     -webkit-transform: translateX(0);
@@ -248,7 +314,7 @@ a, a::after, a::before {
   }
 }
 
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .megamenu__vehicle-text {
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__vehicle .megamenu__vehicle-text {
   background: #FFFFFF;
   position: -webkit-sticky;
   position: sticky;
@@ -263,11 +329,11 @@ a, a::after, a::before {
   z-index: 9999999;
 }
 
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .megamenu__vehicle-text h2 {
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__vehicle .megamenu__vehicle-text h2 {
   font-size: 2rem;
 }
 
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .megamenu__vehicle-text > svg.fa-angle-left {
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__vehicle .megamenu__vehicle-text > svg.fa-angle-left {
   position: absolute;
   height: 22px;
   top: 50%;
@@ -278,13 +344,22 @@ a, a::after, a::before {
   cursor: pointer;
 }
 
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .mega__menu-car {
-  margin: 3rem 0;
-  position: relative;
-  height: 100%;
+@media (min-width: 992px) {
+  .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__vehicle .megamenu__vehicle-text > svg.fa-angle-left {
+    display: none;
+    position: none;
+  }
 }
 
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .mega__menu-car .img-container {
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__vehicle .mega__menu-car {
+  margin: 3rem 0;
+  padding-bottom: 1rem;
+  position: relative;
+  height: 100%;
+  border-bottom: 2px #e6e6e6 solid;
+}
+
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__vehicle .mega__menu-car .img-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -302,16 +377,16 @@ a, a::after, a::before {
   width: 100%;
 }
 
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .mega__menu-car .img-container .car-class {
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__vehicle .mega__menu-car .img-container .car-class {
   position: absolute;
-  top: 0.3rem;
+  top: 0;
   left: 26%;
   padding: 0;
   margin: 0;
-  line-height: 1;
+  line-height: 0.1;
 }
 
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .mega__menu-car .img-container img {
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__vehicle .mega__menu-car .img-container img {
   display: block;
   width: 241px;
   height: 102px;
@@ -322,7 +397,7 @@ a, a::after, a::before {
      object-position: center;
 }
 
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .mega__menu-car .car-price {
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__vehicle .mega__menu-car .car-price {
   width: 241px;
   margin: 0 auto;
   display: -webkit-box;
@@ -339,7 +414,7 @@ a, a::after, a::before {
   line-height: 2;
 }
 
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__cars .mega__menu-car .car-price > p {
+.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .megamenu__vehicle .mega__menu-car .car-price > p {
   padding: 0;
   margin: 0;
 }
@@ -354,6 +429,13 @@ a, a::after, a::before {
   width: 30px;
   cursor: pointer;
   fill: darkgray;
+}
+
+@media (min-width: 992px) {
+  .header__nav ul.header__navlinks li svg.fa-angle-right {
+    display: none;
+    position: none;
+  }
 }
 
 .header__nav ul.header__navlinks li button {
@@ -371,7 +453,6 @@ a, a::after, a::before {
 .header__nav ul.header__navlinks li a {
   font-size: 1rem;
   color: #000000;
-  font-weight: 600;
 }
 
 .header__hamburger {
@@ -382,6 +463,13 @@ a, a::after, a::before {
           transform: translateY(-50%);
   width: 80px;
   cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .header__hamburger {
+    display: none;
+    position: none;
+  }
 }
 
 .header__hamburger > .header__span {

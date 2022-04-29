@@ -31,30 +31,32 @@ window.addEventListener("DOMContentLoaded", () => {
         }; 
     });
 
+
+    //back to explore vehicle menu
     const backExploreVehicle = document.querySelector(".back-to-explore-vehicle");
 
     backExploreVehicle.addEventListener("click", () => {
-        if(megaMenu.classList.contains("show")) {
-            megaMenu.classList.remove("show");
-        } else {
-            megaMenu.classList.add("show");
-        }
+        megaMenu.classList.toggle("show");
     });
+     
 
-    const carsSVG = document.querySelector(".cars-svg");
+    const vehiclesSVG = document.querySelectorAll(".vehicles-svg");
+    const megamenuVehicle = document.querySelectorAll(".megamenu__vehicle");
     const gridCarItems = document.querySelector("#megamenu__grid-car-items");
 
-    carsSVG.addEventListener("click", (e) => {
-        gridCarItems.classList.toggle("show");
-        if(!hamburgerIcon.classList.contains("active")) {
-            megaMenu.classList.remove("show");  
-        };
+    vehiclesSVG.forEach((vecSVG, index) => {
+        vecSVG.addEventListener("click", (e) => {
+            megamenuVehicle.forEach(mega => mega.classList.remove("active"));
+            megamenuVehicle[index].classList.add("active");
+            gridCarItems.classList.add("show");
+        });
     });
+   
+    const backToVehicleMenu = document.querySelectorAll(".back-to-vehicle-menu");
 
-    const backToVehicleMenu = document.querySelector(".back-to-vehicle-menu");
-
-    backToVehicleMenu.addEventListener("click", (e) => {
-        gridCarItems.classList.remove("show");
+    backToVehicleMenu.forEach(back => {
+        back.addEventListener("click", () => {
+            gridCarItems.classList.remove("show");
+        });
     });
 });
-
