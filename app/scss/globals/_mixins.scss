@@ -25,3 +25,16 @@ $max-width: (
         @content;
     }
 }
+
+//on hover 
+@mixin hover {
+    content: "";
+    background: $hover-primary;
+    width: 100%;
+    height: 2px;
+    display: block;
+    margin: 0 auto;
+    transform: scale(0, 1);
+    transition: transform $transition-main-4ms ease-in-out;
+    transform-origin: center;
+}

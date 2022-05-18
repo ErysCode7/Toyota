@@ -1,0 +1,1178 @@
+.header {
+    width: 100%;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    position: relative;
+    z-index: 999999;
+    height: 70px;
+
+    &__container {
+        width: 80%;
+        margin: 0 auto;
+
+        @include min-width(laptop) {
+            height: 70px;
+        }
+    }
+
+    &__logo {
+        height: 100%;
+        
+        > img.header__img {
+            width: 100px;
+            height: 70px;
+            object-fit: cover;
+        }
+    }
+
+    &__nav {
+        background: $bg-color-white;
+
+        @include max-width(laptop) {   
+            position: fixed;
+            width: 100%;
+            height: calc(100vh - 70px);
+            top: 70px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transform: scale(1, 0);
+            transition: transform $transition-main ease;
+            transform-origin: top;
+            margin: 0 auto;
+            margin-top: 0.2rem;
+        }
+
+        @include min-width(laptop) {        
+            background: none;
+            display: block;
+            position: static;
+            top: 0;
+            height: auto;
+            width: auto;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            opacity: 1;
+        }
+        
+
+        &.show {
+            transform: scale(1, 1);
+        }
+
+        ul.header__navlinks {
+            padding-top: 0.1rem;
+            // padding: 1rem;
+
+            @include min-width(laptop) {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                padding: 0;   
+            }
+
+            li {
+                line-height: 70px;
+                font-weight: normal;
+                border-bottom: 1px $border-white solid;
+                height: 100%;
+                cursor: pointer;
+                position: relative;
+
+                @include min-width(laptop) {
+                    padding: 0 1rem;
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    position: static;
+                }
+
+                button {
+                    border: none;
+                    outline: none;
+                    padding: 0;
+                    margin: 0;
+                    background: none;
+                    font-size: 1rem;
+                    color: $bg-color-black;
+                    font-weight: normal;
+                    cursor: pointer;
+                    padding-left: 1.5rem;
+                    
+
+                    @include min-width(laptop) {
+                        padding: 0;
+                        line-height: 25px;
+                    }
+
+                    &::after {
+                        @include min-width(laptop) {
+                            @include hover;
+                        }
+                    }
+
+                    &:hover::after {
+                        @include min-width(laptop) {
+                            transform: scale(1, 1);
+                        }
+                    }
+
+                    &.active::after {
+                        @include min-width(laptop) {
+                            transform: scale(1, 1);
+                        }
+                    }
+                }
+
+                a {
+                    font-size: 1rem;
+                    color: $bg-color-black;
+                    padding-left: 1.5rem;
+                    font-weight: 600;
+                    
+                    
+                    @include min-width(laptop) {
+                        padding: 0;
+                        margin: 0;
+                        line-height: 25px;
+                    }
+
+                    &::after {
+                        @include min-width(laptop) {
+                            @include hover;
+                        }
+                    }
+
+                    &:hover::after {
+                        @include min-width(laptop) {
+                            transform: scale(1, 1);
+                        }
+                    }
+                }
+
+                svg.fa-angle-arrow {
+                    height: 12px;
+                    margin-left: 0.5rem;
+                    display: none;
+                }
+
+                svg.fa-angle-arrow.active {
+                    @include min-width(laptop) {
+                        display: block;
+                    } 
+                }
+                
+                &.header__explore-vehicle > .megamenu {
+                    position: absolute;
+                    background-color: #FFF;
+                    transform: translateX(500%);
+                    transition: transform $transition-main ease;
+                    width: 100%;
+                    height: calc(100vh - 70px);
+                    top: 0;
+                    z-index: 999;
+                 
+                    
+
+                    @include min-width(laptop) {
+                        transform: translateX(0);
+                        position: absolute;
+                        width: 100%;
+                        height: calc(100vh - 70px);
+                        top: 70px;
+                        left: 0;
+                        pointer-events: none;
+                        z-index: 2;
+                        transform: scale(1, 0);
+                        transition: transform 0.5s ease;
+                        transform-origin: top;
+                        background: #FFFFFF;
+
+                        &.show-desktop {
+                            transform: scale(1, 1);
+                        }
+  
+                    }
+                    
+                    &.show {
+                        transform: translateX(0);
+                    }
+
+                    .megamenu__contents {
+                      
+                       
+                        @include min-width(laptop) {
+                            width: 80%;
+                            margin: 0 auto;
+                        }
+
+                        .megamenu__vehicle-tabs {
+                            
+                            
+                            ul {
+                                @include min-width(laptop) {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    pointer-events: auto;
+                                    margin-top: 1rem;
+                                }
+
+                                li {
+                                    @include min-width(laptop) {
+                                        width: 80%;
+                                        margin: 0 auto;
+                                        padding: 0;
+                                        margin: 0;
+                                        border-left: 1px #CCC solid;
+                                        border-right: 1px #CCC solid;
+                                        cursor: pointer;
+                                    }
+
+                                    button {
+
+                                        @include min-width(laptop) {
+                                            display: flex;
+                                            width: 95%;
+                                            margin: 0 auto;
+                                            display: flex;
+                                            align-items: center;
+                                            flex-direction: column;
+                                        }
+                                    }
+                                }
+                                
+        
+                                .megamenu__vehicle-text {
+                                    pointer-events: none;
+                                    background: $bg-color-white;
+                                    position: sticky;
+                                    display: flex;
+                                    justify-content: center;
+                                    margin-bottom: 2rem;
+                                    
+                                    @include min-width(laptop) {
+                                        display: none;
+                                        background: none;
+                                    }
+                                    
+
+                                    h2 {
+                                        font-size: 2rem;
+                                    }
+                                    
+
+                                    > svg.fa-angle-left {
+                                        position: absolute;
+                                        height: 22px;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                        left: 1rem;
+                                        width: 30px;
+                                        cursor: pointer;
+                                        pointer-events: auto;
+                                        
+                                        
+
+                                        @include min-width(laptop) {
+                                            display: none;
+                                            position: none;
+                                        }
+                                        
+                                    }   
+                                }
+                            }
+                        }
+                    }
+
+                    .megamenu__grid-car-items {
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        background: $bg-color-white;
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        transform: translateX(200%);
+                        transition: transform $transition-main ease;
+                        z-index: 99999;      
+                        text-align: center; 
+                        
+                        @include min-width(laptop) {
+                            overflow-x: hidden;
+                            background: none;
+                            position: relative;
+                            transform: none;
+                        }
+
+                        &.show {
+                            transform: translateX(0);
+                        }
+
+                        .megamenu__cars, .megamenu__trucks, .megamenu__crossovers,
+                        .megamenu__electrified, .megamenu__upcoming {
+                            display: none;
+                        }
+
+                        .megamenu__cars.active, .megamenu__trucks.active, .megamenu__crossovers.active,
+                        .megamenu__electrified.active, .megamenu__upcoming.active {
+                            display: block;
+                            animation: slide 300ms ease;   
+                        }
+                        
+                        @keyframes slide {
+                            from {
+                                display: none;
+                                transform: translateX(-200%);
+                                transition: transform $transition-main ease;
+                            }
+                            1% {
+                                display: block;
+                            }
+                            to {
+                                transform: translateX(0);
+                            }
+                        }
+
+                        .carousel__nav {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-top: 0.5rem;
+                                   
+                            > .carousel-indicator {
+                                height: 15px;
+                                width: 15px;
+                                background: rgba(0, 0, 0, 0.3);
+                                border-radius: 50%; 
+                                margin: 0 1rem;
+                                z-index: 2;
+                                pointer-events: all;
+                                cursor: pointer;
+                                
+                                &.active {
+                                    background: rgba(0, 0, 0, .75);
+                                }
+                            }
+                        }
+
+                        .megamenu__vehicle {
+
+                           
+                            .mega__menu-grid-car {
+                                @include min-width(laptop) {
+                                    display: grid;
+                                    grid-template-columns: repeat(5, 1fr);
+                                    overflow-y: hidden;
+                                    gap: 0.5rem 1.61rem;
+                                    margin-top: 1.5rem;
+                                    position: relative;
+                                }
+                            }
+
+                            .megamenu__vehicle-text {
+                                background: $bg-color-white;
+                                position: sticky;
+                                top: 0;
+                                display: flex;
+                                justify-content: center;
+                                margin-bottom: 2rem;
+                                z-index: 9999999;
+                               
+                                @include min-width(laptop) { 
+                                    display: none;
+                                }
+                            
+
+                                h2 {
+                                    font-size: 2rem;
+
+                                    @media(max-width: 400px) {
+                                        width: 85%;
+                                        margin: 0 auto;
+                                        line-height: 60px;
+                                    }
+                                }
+                                
+
+                                > svg.fa-angle-left {
+                                    position: absolute;
+                                    height: 22px;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    left: 1rem;
+                                    width: 30px;
+                                    cursor: pointer;    
+
+                                    @include min-width(laptop) {
+                                        display: none;
+                                        position: none;
+                                    }
+                                }   
+                            }
+
+                            .mega__menu-car {
+                                margin: 3rem 0;
+                                padding-bottom: 1rem;
+                                position: relative;
+                                height: 100%;
+                                border-bottom: 2px $border-white solid;
+
+                                @include min-width(laptop) {
+                                    border: none;
+                                    margin: 0;
+                                    padding: 0;
+                                    height: fit-content;
+                                }
+                                
+
+                                .img-container {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    flex-direction: column;
+                                    height: 100%;
+                                    width: 100%;
+
+                                    @include min-width(laptop) {
+                                        pointer-events: auto;
+                                        cursor: pointer;
+                                        
+                                    }
+                                    
+                                    
+                                    .car-class {
+                                        position: absolute;
+                                        top: 0;
+                                        left: 26%;
+                                        padding: 0;
+                                        margin: 0;
+                                        line-height: 0.1;
+
+                                        @include min-width(laptop) {
+                                            position: absolute;
+                                            font-family: tcomSans,Helvetica Neue,Helvetica,Arial,sans-serif;
+                                            color: #282828;
+                                            font-weight: 600;
+                                            font-size: 0.65rem;
+                                            line-height: 1.6;
+                                            left: 0;
+                                           
+                                        }
+                                    }
+                                        
+                                    
+
+                                    img {
+                                        display: block;
+                                        width: 241px; 
+                                        height: 102px;
+                                        aspect-ratio: 241 / 102;        
+                                        object-fit: contain;
+                                        object-position: center;
+
+                                        @include min-width(laptop) {
+                                            width: 100%;
+                                            height: 100px;
+                                        }
+                                    }
+                                }
+
+                                .car-price {
+                                    width: 241px;
+                                    margin: 0 auto;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    padding: 0;
+                                    line-height: 2;
+
+                                    @include min-width(laptop) {
+                                        margin-top: 0.2rem;
+                                        line-height: 1.8;
+                                        flex-direction: column;
+                                        width: fit-content;
+                                        align-items: center;
+                                        justify-content: center;
+                                        pointer-events: auto;
+                                        cursor: pointer;
+                                    }
+
+                                    h4 {
+                                          @include min-width(laptop) {
+                                            padding: 0;
+                                            margin: 0;
+                                        }
+                                    }
+
+                                    > p {
+                                        padding: 0;
+                                        margin: 0;
+
+                                        @include min-width(laptop) {
+                                            line-height: 1.7;
+                                            font-size: 0.80rem;
+                                        }
+
+                                        > span {
+
+                                            @include min-width(laptop) {
+                                                font-weight: bolder;
+                                            }
+                                        }
+    
+                                    }
+                                
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .header__signup, .header__login {
+                    position: fixed;
+                    background-color: #000;
+                    transition: transform $transition-main ease;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    z-index: 999999;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    transform: translateX(500%);
+
+                    @include min-width(laptop) {
+                        transform: translateX(0);
+                        position: absolute;
+                        top: 70px;
+                        left: 0;
+                        width: 100%;
+                        height: calc(100vh - 70px);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transform: scale(1, 0);
+                        transition: transform $transition-main-0-5s ease;
+                        transform-origin: top;
+                        pointer-events: none;
+                        z-index: 999999;
+                                        
+
+                        &.show-desktop {
+                            transform: scale(1, 1);
+                            pointer-events: auto;
+                        }
+                    }
+                    &.show {
+                        transform: translateX(0);
+                    }
+                    
+                    &-main, .header__login-main {
+                        
+                        
+                        @include min-width(laptop) {
+                            width: 100%;   
+                            display: flex;
+                            align-items: flex-start;
+                            justify-content: space-evenly;
+                            padding: 0 5rem;
+
+                        }
+                    }
+
+                    &-contents, .header__login-contents {
+                        pointer-events: none;
+                        width: 90%;
+                        margin: 0 auto;
+                        padding: 0;
+                        position: relative;
+
+                        @include min-width(laptop) {
+                            flex: 1;
+                            flex-basis: 32%;
+                            flex-direction: row;
+                        }
+
+                        .header__signup-text, .header__login-text {
+                            line-height: 50px;
+                            order: 2;
+                            
+                            @include min-width(laptop) {
+                                order: 1;
+                                flex-grow: 1;
+                                line-height: normal;
+                                margin-top: 2.5rem;
+                                margin-left: 1rem;
+                            }
+                            
+                            @include min-width(desktop) {
+                                margin-top: 5.5rem;
+                                margin-left: 2rem;
+                            }
+                            
+                            > h2 {
+                                font-size: 2.5rem;
+                                color: $bg-color-white;
+
+                                @include min-width(laptop) {
+                                    font-size: 4rem;
+                                }
+
+                                @include min-width(desktop) {
+                                    font-size: 5rem;
+                                }
+                            }
+
+                            > p {
+                                color: $bg-color-white;
+                                padding: 0;
+                                margin: 0;
+
+                                @include min-width(laptop) {
+                                    margin-bottom: 1rem;
+                                }
+                            }
+                        }
+
+                        .header__signup-bottom, .header__login-bottom {
+                            order: 3;
+                            
+                            @include min-width(laptop) {
+                                position: absolute;
+                                bottom: 2rem;
+                                left: 0;
+                                pointer-events: all;
+                                cursor: pointer;
+                            }
+
+                            ul {
+                                flex-wrap: wrap;
+
+                                @include min-width(laptop) {
+                                    margin-top: 10rem;
+                                }
+
+                                li {
+                                  
+                                    border: none;
+                                    
+
+                                    @include min-width(laptop) {
+                                        cursor: pointer;
+                                    }
+
+                                    @include min-width(large) {
+                                        padding-right: 1.25rem;
+                                    }
+
+                                    img {
+                                        height: 100px;
+                                        width: 100px;
+                                        object-fit: contain;
+                                    }
+
+                                    a {
+
+                                        @include min-width(laptop) {
+                                            color: #FFF;
+                                            transition: all 0.5s ease;  
+                                            
+                                            &:hover {
+                                                color: rgb(84, 194, 194);
+                                            }
+                                        }
+
+                                        i {
+                                            color: $bg-color-white;
+
+                                            @include min-width(laptop) {
+                                               
+                                                &:hover {
+                                                    color: #0275d8;;
+                                                }
+                                            }
+                                            
+                                            @include min-width(desktop) {
+                                                padding: 0.5rem;
+                                                font-size: 1.25rem;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .header__login-bottom {
+                            order: 3;
+                            
+                            @include min-width(laptop) {
+                                position: absolute;
+                                bottom: 0rem;
+                                left: 0;
+                                pointer-events: all;
+                                cursor: pointer;
+                                
+                            }
+
+                            @include min-width(desktop) {
+                                
+                            }
+
+                            ul {
+                                flex-wrap: wrap;
+
+                                @include min-width(laptop) {
+                                    margin-top: 10rem;
+                                }
+
+                                li {
+                                    border: none;
+
+                                    @include min-width(laptop) {
+                                        cursor: pointer;
+                                    }
+
+                                    @include min-width(large) {
+                                        padding-right: 1.25rem;
+                                    }
+
+                                    img {
+                                        height: 100px;
+                                        width: 100px;
+                                        object-fit: contain;
+                                    }
+
+                                    a {
+
+                                        @include min-width(laptop) {
+                                            color: #FFF;
+                                            transition: all 0.5s ease;  
+                                            
+                                            &:hover {
+                                                color: rgb(84, 194, 194);
+                                            }
+                                        }
+
+                                        i {
+                                            color: $bg-color-white;
+
+                                            @include min-width(laptop) {
+                                               
+                                                &:hover {
+                                                    color: #0275d8;;
+                                                }
+                                            }
+                                            
+                                            @include min-width(desktop) {
+                                                padding: 0.5rem;
+                                                font-size: 1.25rem;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .header__signup-form, .header__login-form {
+                            order: 1;
+                            pointer-events: auto;
+                            margin-bottom: 2rem;
+
+                            @include min-width(laptop) {
+                                padding: 0;
+                                flex-basis: 50%;
+                                order: 3;
+                            }
+
+                            h2 {
+                                font-size: 4rem;
+                                letter-spacing: 2px;
+                                color: $bg-color-white;
+                                margin-bottom: 1rem;
+
+                                @include max-width(laptop) {
+                                    text-align: center;
+                                }
+
+                                @include max-width(mobile) {
+                                    font-size: 3.5rem;
+                                }
+
+                                @include min-width(laptop) {
+                                    font-size: 3rem;
+                                    width: 80%;
+                                    padding: 0 1rem;
+                                    letter-spacing: 2px;
+                                }
+                            }
+                            
+                            .header__login-inputs-container {
+
+                                @include min-width(laptop) {
+                                    display: grid;
+                                    grid-template-columns: 1fr;
+                                    gap: 1rem;
+                                    padding: 0 1rem;
+                                    width: 100%;
+                                }
+
+                                .header__login-inputs {
+                                    margin-bottom: 0.5rem;
+                                    padding: 0;
+
+                                    @include min-width(laptop) {
+                                        width: 100%;
+                                        margin-bottom: 0;
+                                        line-height: normal;
+                                    }
+
+                                    > label {
+                                        color: #FFF;
+                                        margin: 0;
+                                        font-size: 1.15rem;
+
+                                        @include min-width(laptop) {
+                                            font-size: 1rem;
+                                            display: block;
+                                            margin-bottom: 0.5rem;
+                                        }
+                                    }
+
+                                    > input {
+                                        border: none;
+                                        outline: none;
+                                        border-radius: 2px;
+                                        padding: 0.5rem;
+                                        background: rgb(49, 49, 49);
+                                        color: #FFF;
+                                        width: 100%;
+                                        height: 50px;
+
+                                        &::placeholder {
+                                            color: #CCC;
+                                            font-weight: 500;
+                                        }
+
+                                        @include min-width(laptop) {
+                                            display: block;
+                                            margin-bottom: 0.5rem;
+                                            height: 40px;
+                                            width: 100%;
+                                        } 
+                                    }
+                                }
+
+                                .signup__btn, .login__btn {
+                                    background: #0275d8;
+                                    padding: 0.8rem 2rem;
+                                    color: #FFF;
+                                    border-radius: 5px;
+                                    cursor: pointer;
+
+                                    @include max-width(laptop) {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+
+                            .header__signup-inputs-container {
+                                
+                                
+                                @include min-width(laptop) {
+                                    display: grid;
+                                    grid-template-columns: repeat(2, 1fr);
+                                    gap: 1rem;
+                                    padding: 0 1rem;
+                                    width: 80%;
+                                }
+
+                                .header__signup-inputs {
+                                    margin-bottom: 0.5rem;
+                                    padding: 0;
+
+
+                                    @include min-width(laptop) {
+                                        width: 100%;
+                                        margin-bottom: 0;
+                                        line-height: normal;
+                                    }
+                                    
+                                    > label {
+                                        color: #FFF;
+                                        margin: 0;
+                                        font-size: 1.15rem;
+
+                                        @include min-width(laptop) {
+                                            font-size: 1rem;
+                                            display: block;
+                                            margin-bottom: 0.5rem;
+                                        }
+                                    }
+
+                                    > input {
+                                        border: none;
+                                        outline: none;
+                                        border-radius: 2px;
+                                        padding: 0.5rem;
+                                        background: rgb(49, 49, 49);
+                                        color: #FFF;
+                                        width: 100%;
+                                        height: 50px;
+
+                                        &::placeholder {
+                                            color: #CCC;
+                                            font-weight: 500;
+                                        }
+
+                                        @include min-width(laptop) {
+                                            display: block;
+                                            margin-bottom: 0.5rem;
+                                            height: 40px;
+                                            width: 100%;
+                                        } 
+                                    }
+                                }
+
+                                .signup__btn, .login__btn {
+                                    background: #0275d8;
+                                    padding: 0.8rem 2rem;
+                                    color: #FFF;
+                                    border-radius: 5px;
+                                    cursor: pointer;
+
+                                    @include max-width(laptop) {
+                                        width: 100%;
+                                    }
+                                }
+
+                                .header__signup-inputs:nth-child(1), .header__signup-inputs:nth-child(2) {
+                                    @include min-width(laptop) {
+                                        grid-row: 1/2;
+                                    }          
+                                }
+
+                                .header__signup-inputs:nth-child(3) {
+                                    @include min-width(laptop) {
+                                        grid-row: 2/3;
+                                        grid-column: 1/3;
+                                    }          
+                                }
+
+                                .header__signup-inputs:nth-child(4), .header__signup-inputs:nth-child(5) {
+                                    @include min-width(laptop) {
+                                        grid-row: 3/4;
+                                    }          
+                                }
+                            }
+                        }
+
+                        .header__login-form {
+
+                            @include min-width(laptop) {
+                                padding: 5rem 0.5rem 0 0.5rem;   
+                            }
+
+                            .header__login-inputs-container {
+                               
+
+                                .header__login-inputs {
+                            
+                                    @include min-width(laptop) {
+                                        margin-bottom: 0.7rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .header__login-contents {
+                       
+                    
+
+                        @include min-width(laptop) {
+                            min-height: 550px;
+                        }
+                    }
+
+                    svg.fa-angle-left {
+                        padding-left: 0.5rem;
+                        height: 22px;
+                        width: 30px;
+                        cursor: pointer;
+                        pointer-events: auto;
+                        fill: $bg-color-white;
+
+                        @include min-width(laptop) {
+                            display: none;
+                        }
+                    }
+                }   
+
+                svg.fa-angle-right {
+                    position: absolute;
+                    top: 50%;
+                    right: 2rem;
+                    transform: translateY(-50%);
+                    height: 12px;
+                    width: 30px;
+                    cursor: pointer;
+                    fill: darkgray;    
+
+                    @include min-width(laptop) {
+                        display: none;
+                        position: none;
+                    }
+                }
+
+                svg.larger-svg {
+                    height: 22px;
+                    fill: #000000;
+                }
+            }
+        }
+    }
+
+    //HAMBURGER MENU
+    &__hamburger {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 80px;
+        cursor: pointer;
+
+        @include min-width(laptop) {
+            display: none;
+            position: none;
+        }
+       
+                
+        > .header__span {
+            display: block;
+            height: 8px;
+            width: 50%;
+            background: #111;
+            border-radius: 9px;
+            transition: all .3s;
+            position: relative;
+            height: 4px;
+            width: 23px;
+            margin: 3px 0;
+        }
+
+
+        &.active span:nth-child(1) {
+            animation: ease .7s top forwards;
+        }
+          
+        &.not-active span:nth-child(1) {
+            animation: ease .7s top-2 forwards;
+        }
+          
+        &.active span:nth-child(2) {
+            animation: ease .7s scaled forwards;
+        }
+          
+        &.not-active span:nth-child(2) {
+            animation: ease .7s scaled-2 forwards;
+        }
+          
+        &.active span:nth-child(3) {
+            animation: ease .7s bottom forwards;
+        }
+          
+        &.not-active span:nth-child(3) {
+            animation: ease .7s bottom-2 forwards;
+        }
+
+        //animated hamburger menu to x
+        @keyframes top {
+            0% {
+                top: 0;
+                transform: rotate(0);
+            }
+            50% {
+                top: 7.1px;
+                transform: rotate(0);
+            }
+            100% {
+                top: 7.1px;
+                transform: rotate(45deg);
+            }
+        }
+          
+        @keyframes top-2 {
+            0% {
+              top: 7.1px;
+              transform: rotate(45deg);
+            }
+            50% {
+              top: 7.1px;
+              transform: rotate(0deg);
+            }
+            100% {
+              top: 0;
+              transform: rotate(0deg);
+            }
+        }
+          
+        @keyframes bottom {
+            0% {
+              bottom: 0;
+              transform: rotate(0);
+            }
+            50% {
+              bottom: 7.1px;
+              transform: rotate(0);
+            }
+            100% {
+              bottom: 7.1px;
+              transform: rotate(135deg);
+            }
+        }
+          
+        @keyframes bottom-2 {
+            0% {
+              bottom: 7.1px;
+              transform: rotate(135deg);
+            }
+            50% {
+              bottom: 7.1px;
+              transform: rotate(0);
+            }
+            100% {
+              bottom: 0;
+              transform: rotate(0);
+            }
+        }
+          
+        @keyframes scaled {
+            50% {
+              transform: scale(0);
+            }
+            100% {
+              transform: scale(0);
+            }
+        }
+          
+        @keyframes scaled-2 {
+            0% {
+              transform: scale(0);
+            }
+            50% {
+              transform: scale(0);
+            }
+            100% {
+              transform: scale(1);
+            }
+        }
+    }
+
+}
