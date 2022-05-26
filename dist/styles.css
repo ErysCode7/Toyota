@@ -75,6 +75,54 @@ a, a::after, a::before {
           flex-direction: column;
 }
 
+@media (max-width: 575.98px) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hide-for-tablets {
+    display: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .hide-for-laptops {
+    display: none;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .hide-for-mobile-mf {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .hide-for-tablets-mf {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .hide-for-laptops-mf {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hide-for-desktop-mf {
+    display: none;
+  }
+}
+
 .header {
   width: 100%;
   background: #fff;
@@ -130,6 +178,7 @@ a, a::after, a::before {
             transform-origin: top;
     margin: 0 auto;
     margin-top: 0.2rem;
+    opacity: 0;
   }
 }
 
@@ -149,6 +198,7 @@ a, a::after, a::before {
 }
 
 .header__nav.show {
+  opacity: 1;
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
 }
@@ -535,18 +585,20 @@ a, a::after, a::before {
   }
 }
 
-.header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .carousel__nav {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 0.5rem;
+@media (min-width: 992px) {
+  .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .carousel__nav {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 0.5rem;
+  }
 }
 
 .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu .megamenu__grid-car-items .carousel__nav > .carousel-indicator {
@@ -824,7 +876,7 @@ a, a::after, a::before {
   .header__nav ul.header__navlinks li .header__signup.show-desktop, .header__nav ul.header__navlinks li .header__login.show-desktop {
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1);
-    pointer-events: auto;
+    pointer-events: none;
   }
 }
 
