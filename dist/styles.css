@@ -876,7 +876,7 @@ a, a::after, a::before {
   .header__nav ul.header__navlinks li .header__signup.show-desktop, .header__nav ul.header__navlinks li .header__login.show-desktop {
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1);
-    pointer-events: none;
+    pointer-events: all;
   }
 }
 
@@ -899,6 +899,20 @@ a, a::after, a::before {
             justify-content: space-evenly;
     padding: 0 5rem;
   }
+}
+
+.header__nav ul.header__navlinks li .header__signup > .close-nav, .header__nav ul.header__navlinks li .header__login > .close-nav {
+  position: fixed;
+  right: 2rem;
+  top: 0;
+  padding: 0.5rem 1rem;
+}
+
+.header__nav ul.header__navlinks li .header__signup > .close-nav > h2.close-btn, .header__nav ul.header__navlinks li .header__login > .close-nav > h2.close-btn {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  color: red;
+  border-radius: 1rem;
 }
 
 .header__nav ul.header__navlinks li .header__signup-contents, .header__nav ul.header__navlinks li .header__signup .header__login-contents, .header__nav ul.header__navlinks li .header__login-contents, .header__nav ul.header__navlinks li .header__login .header__login-contents {

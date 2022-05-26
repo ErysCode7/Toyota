@@ -17,6 +17,9 @@ const signupBtnli = document.querySelector("#signup-btn-li");
 export const loginUpArrow = document.querySelector("#login-svg-angle-up");
 export const loginDownArrow = document.querySelector("#login-svg-angle-down");
 const loginBtnLi = document.querySelector("#login-btn-li");
+const loginClose = document.querySelector("[data-close-login]");
+const signUpClose = document.querySelector("[data-close-signup]");
+
 
 
 
@@ -49,7 +52,6 @@ headerSignUpForm.addEventListener("click", (e) => {
 
 
 signupBtnli.addEventListener("click", (e) => {
-    console.log("click")
     signupUpArrow.classList.add("active");
     signupDownArrow.classList.remove("active");
     megaMenu.classList.remove("show-desktop");
@@ -59,14 +61,29 @@ signupBtnli.addEventListener("click", (e) => {
     loginUpArrow.classList.remove("active");
     loginDownArrow.classList.add("active");
 
-    if(headerSignUp.classList.contains("show-desktop")) {
-        headerSignUp.classList.remove("show-desktop");
-        signupUpArrow.classList.remove("active");
-        signupDownArrow.classList.add("active");
-    } else {
-        headerSignUp.classList.add("show-desktop");
-    }
+
+    headerSignUp.classList.add("show-desktop");
+
 });
+
+signUpClose.addEventListener("click", (e) => {
+    e.stopPropagation();
+    headerSignUp.classList.remove("show-desktop");
+    signupDownArrow.classList.add("active");
+    signupUpArrow.classList.remove("active");
+})
+
+
+
+loginClose.addEventListener("click", (e) => {
+    e.stopPropagation();
+    headerLogin.classList.remove("show-desktop");
+    loginDownArrow.classList.add("active");
+    loginUpArrow.classList.remove("active");
+})
+
+
+
 
 loginBtnLi.addEventListener("click", (e) => {
     loginUpArrow.classList.add("active");
@@ -77,12 +94,7 @@ loginBtnLi.addEventListener("click", (e) => {
     headerSignUp.classList.remove("show-desktop");
     signupUpArrow.classList.remove("active");
     signupDownArrow.classList.add("active");
-
-    if(headerLogin.classList.contains("show-desktop")) {
-        headerLogin.classList.remove("show-desktop");
-        loginUpArrow.classList.remove("active");
-        loginDownArrow.classList.add("active");
-    } else {
-        headerLogin.classList.add("show-desktop");
-    }
+ 
+    headerLogin.classList.add("show-desktop");
+    
 })

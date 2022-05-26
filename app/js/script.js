@@ -4,18 +4,6 @@ import * as vehicle from "./vehicle.js";
 
 
 
-// window.addEventListener("DOMContentLoaded", () => {
-    
-    
-    
-    
-
-
-    
-
-   
-// });
-
 
 window.addEventListener("resize", () => {
     if(window.innerWidth > 991) {
@@ -36,12 +24,16 @@ window.addEventListener("resize", () => {
         const signupDownArrow = document.querySelector("#signup-svg-angle-down");
         const loginDownArrow = document.querySelector("#login-svg-angle-down");
 
+           
         hamburgerIcon.classList.remove("active");
         megaMenu.classList.remove("show");
         headerNav.classList.remove("show");
         gridCarItems.classList.remove("show");
         headerSignUp.classList.remove("show");
         headerLogin.classList.remove("show");
+
+        signupUpArrow.classList.remove("active");
+        signupDownArrow.classList.add("active");
         
       
 
@@ -57,7 +49,9 @@ window.addEventListener("resize", () => {
         const headerLogin = document.querySelector("#header__login");
         const exploreUpArrow = document.querySelector("#explore-svg-angle-up");
         const signupUpArrow = document.querySelector("#signup-svg-angle-up");
+        const signupDownArrow = document.querySelector("#signup-svg-angle-down");
         const loginUpArrow = document.querySelector("#login-svg-angle-up");
+        
 
         megaMenu.classList.remove("show-desktop");
         
@@ -70,6 +64,10 @@ window.addEventListener("resize", () => {
         if(headerLogin.classList.contains("show-desktop")) {
             headerLogin.classList.remove("show-desktop");
         }  
+
+        
+      
+        
     }
 });
 

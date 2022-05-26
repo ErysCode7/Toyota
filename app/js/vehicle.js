@@ -115,3 +115,4 @@ exploreVehicleLI.addEventListener("click", (e) => {
         megaMenu.classList.add("show-desktop");
     }
 });
+
