@@ -1,0 +1,101 @@
+.hero-section-2 {
+    height: 100%;
+    margin-bottom: 1rem;
+
+    @include min-width(mobile) {
+        margin-bottom: 0;
+    }
+
+    &__container {
+        
+
+        @include min-width(laptop) {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__image {
+
+        @include min-width(laptop) {
+            flex: 2;
+        }
+        
+
+        > img {
+            width: 100%;
+            object-fit: cover;
+            min-height: 433px;
+            object-position: 100% 0%; 
+            
+            @include min-width(laptop) {
+                min-height: 480px;
+            }
+        }
+    }
+
+    &__contents {
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+        height: 500px;
+        margin-top: 3rem;
+
+        @include min-width(laptop) {
+            flex: 1.5;
+            width: 100%;
+        }
+
+        > .image-content {    
+            
+
+            > img.image-design {
+                position: absolute;
+                width: 86px;
+                z-index: -1;
+                
+                @include min-width(laptop) {
+                    top: 0;
+                    left: 50px;
+                    width: 150px;
+                }
+            }
+
+            > h2 {
+
+                @media (min-width: 500px) {
+                    font-size: 2.3rem;
+                }
+               
+                @include min-width(laptop) {
+                    position: absolute; 
+                    top: 70px;
+                    left: 120px;
+                    font-size: 2.3rem;
+                }
+               
+            }
+        }
+
+        > .text-contents {
+            margin-top: 3rem;
+
+            @include min-width(laptop) {
+                width: 50%;
+                margin: 0 auto;
+                position: absolute;
+                top: 180px;
+                left: 150px;
+            }
+        
+            > p {
+                font-style: italic;
+            }
+
+            a {
+                
+            }
+        }
+    }
+}

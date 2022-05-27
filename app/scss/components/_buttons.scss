@@ -1,0 +1,18 @@
+:root {
+    --background-color: linear-gradient(to right, #84abec, #cf84fb); ;    
+    --background-red: red;
+}
+
+.btn.btn-primary {
+    background-color: var(--background-red);
+    border-radius: 50px;
+    letter-spacing: 2px;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Oswald,sans-serif;
+    color: #FFFFFF;
+    padding: 0.5rem 1.75rem;
+    transition: all 0.5s ease;
+}
