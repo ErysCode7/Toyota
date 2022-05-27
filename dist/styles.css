@@ -2368,6 +2368,12 @@ a, a::after, a::before {
 }
 
 @media (min-width: 992px) {
+  .hero-section-5 {
+    padding-bottom: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
   .hero-section-5__container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
