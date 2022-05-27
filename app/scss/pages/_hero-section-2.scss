@@ -1,6 +1,5 @@
 .hero-section-2 {
-    height: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem;    
 
     @include min-width(mobile) {
         margin-bottom: 0;
@@ -94,7 +93,11 @@
             }
 
             a {
-                
+                @include button($btn-primary);
+
+                &:hover {
+                    color: $btn-hover-primary;
+                }
             }
         }
     }

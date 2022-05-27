@@ -1,18 +1,18 @@
-:root {
-    --background-color: linear-gradient(to right, #84abec, #cf84fb); ;    
-    --background-red: red;
-}
+//button color
+$btn-primary: linear-gradient(to right, #84abec, #cf84fb);
+$btn-hover-primary: #000000;
+$btn-hover-black: rgb(196, 189, 189);
 
-.btn.btn-primary {
-    background-color: var(--background-red);
-    border-radius: 50px;
-    letter-spacing: 2px;
-    font-size: 0.875rem;
-    line-height: 1.4;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-family: Oswald,sans-serif;
+@mixin button($bg-color) {
+    background: $bg-color;
     color: #FFFFFF;
     padding: 0.5rem 1.75rem;
+    border-radius: 50px;
+    letter-spacing: 2px;
+    font-family: Oswald, sans-serif;
+    font-size: 0.875rem;
+    font-weight: bold;
+    line-height: 1.4;
+    text-transform: uppercase;
     transition: all 0.5s ease;
 }

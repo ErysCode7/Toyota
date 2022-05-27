@@ -1,0 +1,107 @@
+.hero-section-3 {
+    height: 100%;
+    margin-bottom: 1rem;
+
+    @include min-width(mobile) {
+ 
+        margin-bottom: 0;
+    }
+
+
+    &__container {
+
+        @include min-width(laptop) {
+            flex-direction: row;
+            justify-content: space-between;      
+        }
+
+    }
+
+    &__image {
+
+        
+        @include min-width(laptop) {
+            order: 2;
+            flex: 1;
+        }
+
+        @include min-width(desktop) {
+            flex: unset;
+        }
+
+        > img {
+            width: 100%;
+            height: 244px;
+            object-fit: cover;
+            object-position: 0% 0%;
+
+            @include min-width(mobile) {
+                height: 100%;
+            }
+
+            @include min-width(laptop) {
+                height: 437px;
+            }
+
+            @include min-width(desktop) {
+                width: 846px;
+            }
+
+            @media(min-width: 1800px) {
+                width: 100%;
+            }
+
+            @media(min-width: 3000px) {
+                height: 100%;
+            }
+        }
+    }
+
+    &__contents {
+        width: 80%;
+        margin: 0 auto;
+     
+        
+        @include min-width(laptop) {
+            order: 1;
+            flex-basis: 35%;
+            margin-left: 1.25rem;
+            height: 80%;
+        }
+
+        @include min-width(desktop) {
+            margin: 0 auto;
+            flex-basis: unset;
+            width: 20%;
+            flex: unset;
+        }
+        
+        > h2 {
+
+            @media (min-width: 500px) {
+                font-size: 2.3rem;
+            }
+
+            @include min-width(laptop) {
+                margin-bottom: 1rem;
+                font-size: 2.3rem; 
+            }
+        }
+
+        > p {
+            font-style: italic;
+
+            @include min-width(laptop) {
+                margin-bottom: 2.5rem;  
+            }
+        }
+
+        > a {
+            @include button($btn-hover-primary);
+
+            &:hover {
+                color: $btn-hover-black;
+            }
+        }
+    }
+}
