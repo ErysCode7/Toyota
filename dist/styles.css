@@ -1938,6 +1938,10 @@ a, a::after, a::before {
   margin: 0 auto;
 }
 
+.hero__image {
+  opacity: 0;
+}
+
 .hero__image > img {
   width: 100%;
   -o-object-fit: cover;
@@ -1958,6 +1962,7 @@ a, a::after, a::before {
 
 .hero__contents {
   text-align: center;
+  opacity: 0;
 }
 
 .hero__contents > h1.hero-title {

@@ -8,6 +8,7 @@
     }
 
     &__image {
+        opacity: 0;
 
         > img {
             width: 100%;
@@ -25,6 +26,7 @@
 
     &__contents {
         text-align: center;
+        opacity: 0;
 
         > h1.hero-title {
             font-weight: 700;
