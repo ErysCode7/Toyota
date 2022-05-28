@@ -2291,12 +2291,13 @@ a, a::after, a::before {
 
 .hero-section-4 {
   margin-top: 1.25rem;
-  padding: 1rem 0;
+  padding: 4rem 0;
 }
 
 @media (min-width: 992px) {
   .hero-section-4 {
     margin-top: 0;
+    padding: 1rem 0;
   }
 }
 
@@ -2437,8 +2438,13 @@ a, a::after, a::before {
   color: #000000;
 }
 
+.hero-section-5 {
+  padding: 4rem 0;
+}
+
 @media (min-width: 992px) {
   .hero-section-5 {
+    padding: 0;
     padding-bottom: 2rem;
   }
 }

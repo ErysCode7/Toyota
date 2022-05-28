@@ -1,11 +1,10 @@
 .hero-section-4 {
     margin-top: 1.25rem;
-    // height: 100%;
-    padding: 1rem 0;
+    padding: 4rem 0;
 
     @include min-width(laptop) {
         margin-top: 0;
-       
+        padding: 1rem 0;
     }
 
 

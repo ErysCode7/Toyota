@@ -1,7 +1,10 @@
 .hero-section-5 {
+    padding: 4rem 0;
+
 
     @include min-width(laptop) {
-        padding-bottom:  2rem;
+        padding: 0;
+        padding-bottom: 2rem;
     }
     &__container {
 
