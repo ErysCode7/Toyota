@@ -133,6 +133,13 @@ a, a::after, a::before {
   height: 70px;
 }
 
+@media (min-width: 992px) {
+  .header {
+    position: fixed;
+    top: 0;
+  }
+}
+
 .header__container {
   width: 80%;
   margin: 0 auto;
@@ -386,10 +393,12 @@ a, a::after, a::before {
     -webkit-transform-origin: top;
             transform-origin: top;
     background: #FFFFFF;
+    opacity: 0;
   }
   .header__nav ul.header__navlinks li.header__explore-vehicle > .megamenu.show-desktop {
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1);
+    opacity: 1;
   }
 }
 
