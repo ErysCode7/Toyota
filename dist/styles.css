@@ -1918,8 +1918,8 @@ a, a::after, a::before {
 
 @media (max-width: 575.98px) {
   [data-fade="down"] {
-    -webkit-transform: translate(-50px);
-            transform: translate(-50px);
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
   }
 }
 
