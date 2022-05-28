@@ -12,7 +12,8 @@
 
         @include min-width(laptop) {
             flex-direction: row;
-            justify-content: space-between;      
+            justify-content: space-between;   
+            
         }
 
     }
@@ -60,6 +61,7 @@
     &__contents {
         width: 80%;
         margin: 0 auto;
+      
      
         
         @include min-width(laptop) {
@@ -74,6 +76,7 @@
             flex-basis: unset;
             width: 20%;
             flex: unset;
+            height: 100%;
         }
         
         > h2 {

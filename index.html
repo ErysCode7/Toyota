@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toyota</title>
-    <!-- CSS only -->
     <!--GOOGLE FONT-->
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans:ital,wght@0,300;1,300&family=Oswald:wght@400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
@@ -14,11 +13,12 @@
     <!--CSS-->
     <link rel="stylesheet" href="./dist/styles.css">
     <!--JAVASCRIPT-->
+    
     <script type="module" src="./app/js/script.js" defer></script>
     <link rel="shortcut icon" href="./assets/images/index-page-images/toyota-logo.jpeg" type="image/x-icon">
 </head>
 <body>
-    <header class="header">
+    <header class="header" >
         <div class="header__container flex flex-jc-sb flex-ai-c">
             <div class="header__logo">
                 <img class="header__img "src="./assets/images/index-page-images/toyota-logo.jpeg" alt="Toyota Logo">
@@ -583,7 +583,7 @@
             <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc.<path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg> -->
         </div>
     </header>
-  
+      
     <section class="hero flex flex-jc-c flex-fd-c">
         <div class="hero__container flex flex-ai-c flex-fd-c">
             <div class="hero__image">
@@ -598,10 +598,10 @@
 
     <section class="hero-section-2 flex flex-ai-c flex-fd-c">
         <div class="hero-section-2__container flex flex-fd-c flex-ai-c flex-jc-c">
-            <div class="hero-section-2__image">
+            <div class="hero-section-2__image" data-slide="left">
                 <img src="./assets/images/index-page-images/car-design-2.jpeg" alt="Toyota Car Two Model" class="car-2-image">
             </div>
-            <div class="hero-section-2__contents">
+            <div class="hero-section-2__contents" data-fade="down">
                 <div class="image-content flex flex-ai-c">
                     <img class="image-design" src="./assets/images/index-page-images/image-design.png" alt="Image Design">
                     <h2>The future has arrived.</h2>
@@ -616,10 +616,10 @@
 
     <section class="hero-section-3 flex flex-jc-c flex-ai-c flex-fd-c">
         <div class="hero-section-3__container flex flex-fd-c flex-ai-c flex-jc-c">
-            <div class="hero-section-3__image">
+            <div class="hero-section-3__image" data-slide="right">
                 <img src="./assets/images/index-page-images/car-design-3.jpeg" alt="Toyota Car Three Model" class="car-3-image">
             </div>
-            <div class="hero-section-3__contents">
+            <div class="hero-section-3__contents" data-fade="down">
                 <h2>Less of a machine <br> More of a pal.</h2>
                 <p>Concept-i follows our belief that vehicles shouldn't start with technology—they should start, and end, with the experience of the people who use them. Therefore, Concept-i was built from the inside out, with a focus on making it immersive, energetic and, most importantly—approachable.</p>
                 <a href="https://www.toyota.com/" target="_blanks">Learn More</a>
@@ -629,10 +629,10 @@
 
     <section class="hero-section-4 flex flex-jc-c flex-ai-c flex-fd-c">
         <div class="hero-section-4__container flex flex-fd-c flex-ai-c flex-jc-c">
-            <div class="hero-section-4__image">
+            <div class="hero-section-4__image" data-slide="right">
                 <img src="./assets/images/index-page-images/car-design-4.jpeg" alt="Neue Toyota Concept Cars in Tokio" class="car-4-image">
             </div>
-            <div class="hero-section-4__contents">
+            <div class="hero-section-4__contents" data-fade="down">
                 <div class="image-content">
                     <img src="./assets/images/index-page-images/image-design.png" alt="Image Design">
                     <h2>Neue Toyota Concept Cars in Tokio</h2>
@@ -647,10 +647,10 @@
 
     <section class="hero-section-5 flex flex-jc-c flex-ai-c flex-fd-c">
         <div class="hero-section-5__container flex flex-fd-c flex-ai-c flex-jc-c">
-            <div class="hero-section-5__image">
+            <div class="hero-section-5__image" data-slide="left">
                 <img src="./assets/images/index-page-images/car-design-5.png" alt="Toyota Car Five Model" class="car-5-image">
             </div>
-            <div class="hero-section-5__contents">
+            <div class="hero-section-5__contents" data-fade="down">
                 <h2>Concept-i looks as <br>brilliant</br></h2>
                 <p>Its minimal yet artful interior is designed to help support its user experience. Lines flow from the center of the dashboard throughout the vehicle, while Yui travels around them, using light, sound and even touch to communicate critical information. It utilizes a single wide-screen, 3-D, full-color Head-Up Display that blends into an interior that is clean and uncluttered.</p>
                 <a href="https://www.toyota.com/" target="_blanks">Learn More</a>
@@ -744,6 +744,7 @@
             </div>
         </div>
     </footer>
-    
+   
+
 </body>
 </html>

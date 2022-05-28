@@ -1,5 +1,6 @@
 .hero-section-2 {
-    margin-bottom: 1rem;    
+    margin-bottom: 1rem;  
+ 
 
     @include min-width(mobile) {
         margin-bottom: 0;

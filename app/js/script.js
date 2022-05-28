@@ -1,6 +1,6 @@
 import * as hamburger from "./hamburger.js";
 import * as vehicle from "./vehicle.js";
-
+import * as aos from "./animation-onscroll.js";
 
 
 
