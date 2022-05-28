@@ -23,6 +23,10 @@
     transition-delay: 1s;
     transform: translateY(-100px);
     opacity: 0;
+
+    @include max-width(mobile) {
+        transform: translate(-50px);
+    }
 }
 
 .show-fade {

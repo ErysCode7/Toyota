@@ -1841,9 +1841,15 @@ a, a::after, a::before {
 }
 
 .footer__info > .text-contents > .social-icons a {
+  margin-right: 1rem;
   width: 100%;
-  margin-right: 3rem;
-  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .footer__info > .text-contents > .social-icons a {
+    margin-right: 3rem;
+    cursor: pointer;
+  }
 }
 
 .footer__info > .text-contents > .social-icons i {
@@ -1908,6 +1914,13 @@ a, a::after, a::before {
   -webkit-transform: translateY(-100px);
           transform: translateY(-100px);
   opacity: 0;
+}
+
+@media (max-width: 575.98px) {
+  [data-fade="down"] {
+    -webkit-transform: translate(-50px);
+            transform: translate(-50px);
+  }
 }
 
 .show-fade {
