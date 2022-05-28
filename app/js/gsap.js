@@ -1,4 +1,4 @@
 const timeline = gsap.timeline({defaults: {duration: 1, ease: "power2.easeInOut"}})
 timeline
     .fromTo(".hero__image", {x: "100%", opacity: 0}, {x: "0%", opacity: 1})
-    .to(".hero__contents",  {opacity: 1})
+    .fromTo(".hero__contents",  {opacity: 0}, {opacity: 1})
